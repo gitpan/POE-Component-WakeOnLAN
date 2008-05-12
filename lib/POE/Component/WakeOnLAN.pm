@@ -9,7 +9,7 @@ use Net::IP;
 use POE;
 use vars qw($VERSION);
 
-$VERSION = '0.02';
+$VERSION = '0.04';
 
 sub wake_up {
   my $package = shift;
@@ -171,6 +171,12 @@ Plus an arbitary key/values that were passed.
 Chris C<BinGOs> Williams <chris@bingosnet.co.uk>
 
 Clinton Wong
+
+=head1 LICENSE
+
+Copyright C<(c)> Chris Williams and Clinton Wong.
+
+This module may be used, modified, and distributed under the same terms as Perl itself. Please see the license that came with your Perl distribution for details.
 
 =head1 SEE ALSO
 

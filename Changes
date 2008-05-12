@@ -1,5 +1,8 @@
 ChangeLog for POE::Component::WakeOnLAN:
 ========================================
 
+0.04	Mon May 12 14:04:30 BST 2008
+	- Removed kwalitee test and added LICENSE information.
+
 0.02	Tue Apr  8 09:51:32 BST 2008
 	- Initial CPAN Release
