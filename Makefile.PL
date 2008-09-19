@@ -1,3 +1,4 @@
+use 5.006;
 use strict;
 use inc::Module::Install;
 name 'POE-Component-WakeOnLAN';
@@ -5,9 +6,8 @@ author 'Chris Williams <chris@bingosnet.co.uk>';
 version_from 'lib/POE/Component/WakeOnLAN.pm';
 abstract_from 'lib/POE/Component/WakeOnLAN.pm';
 license 'perl';
-perl_version '5.000';
+perl_version '5.006';
 build_requires 'Test::More' => 0.47;
-requires 'warnings::compat' => 0 if $] < 5.006;
 requires 'Socket' => 0;
 requires 'IO::Socket::INET' => 0;
 requires 'Net::IP' => 0;
