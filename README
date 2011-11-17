@@ -2,34 +2,37 @@ NAME
     POE::Component::WakeOnLAN - A POE Component to send packets to power on
     computers.
 
+VERSION
+    version 1.04
+
 SYNOPSIS
       use strict;
       use warnings;
       use Data::Dumper;
       use POE;
       use POE::Component::WakeOnLAN;
-      
-  my $mac_address = '00:0a:e4:4b:b0:94';
-      
-  POE::Session->create(
+
+      my $mac_address = '00:0a:e4:4b:b0:94';
+
+      POE::Session->create(
          package_states => [
             'main' => [qw(_start _response)],
          ],
       );
-      
-  
-  $poe_kernel->run();
+
+
+      $poe_kernel->run();
       exit 0;
-      
-  sub _start {
-        POE::Component::WakeOnLAN->wake_up( 
+
+      sub _start {
+        POE::Component::WakeOnLAN->wake_up(
             macaddr => $mac_address,
             event   => '_response',
         );
         return;
       }
-      
-  sub _response {
+
+      sub _response {
         print Dumper( $_[ARG0] );
         return;
       }
@@ -41,7 +44,7 @@ DESCRIPTION
     It is based on the Net::Wake module by Clinton Wong.
 
 CONSTRUCTOR
-    wake_up
+    "wake_up"
         Sends a wake-on-lan packet via UDP. Takes a number of parameters:
 
           'macaddr', the MAC Address of the host to wake up, mandatory;
@@ -82,13 +85,19 @@ OUTPUT EVENT
 
     Plus an arbitary key/values that were passed.
 
-AUTHOR
-    Chris "BinGOs" Williams <chris@bingosnet.co.uk>
-
-    Clinton Wong
-
 SEE ALSO
     POE
 
+    Net::Wake
+
     <http://gsd.di.uminho.pt/jpo/software/wakeonlan/mini-howto/>
+
+AUTHOR
+    Chris Williams <chris@bingosnet.co.uk>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2011 by Chris Williams and Clinton Wong.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
 
